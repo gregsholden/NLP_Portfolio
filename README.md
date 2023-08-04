@@ -51,6 +51,28 @@ Portfolio_model.ipynb:
 
 Getting Started
 
+Part 1 of 2:  Running the NLP Models
+
+Inputs:  FOMC Minutes transcripts are the primary inputs to the NLP models.  This info can be accessed in two ways:
+
+1.	Using the FedTools python package to set a custom date range, and then downloading new data:
+
+ 
+
+2.	 Alternatively, a pre-existing dataset containing all FOMC Minutes from 2008-23 YTD can be retrieved from a .csv file within the github repository:
+
+ 
+
+In either case, this process will return a pandas df that looks like this:
+
+ 
+
+Outputs:   The NLP model notebook creates 3 separate .csv files which can be used in the Portfolio Optimization model: (a) one containing vectors from the Universal Sentence Encoder modeling (2) a second file containing results of the Named Entity Recognition modeling, and (3) a third file containing the results of all other NLP analyses.
+
+
+![image](https://github.com/JPeloquin13/NLP_Portfolio/assets/127001653/641e3ee7-622d-4f5a-818b-d57be9d69fe9)
+
+
 
 Requirements
 
