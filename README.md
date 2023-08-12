@@ -10,7 +10,7 @@ Much of the existing analysis combining NLP and investing uses sentiment parsed 
 
 But this approach has its limitations:
 
-First, investors rarely deploy all their investable cash into a single stock. 
+First, investors rarely deploy all of their investable cash into a single stock. 
 
 Second, outside of a few high-profile technology and consumer goods companies, very few single stocks generate enough social media dialogue to be useful for NLP modeling.
 
@@ -36,6 +36,10 @@ Our approach compares the investment return of TWO PORTFOLIOS – one that relie
 
 Our dataset consists of FOMC Minutes from 2008 through June of 2023.   Upon the completion of each FOMC meeting a short summary is produced.   Approximately 3 weeks later a more extensive summary of the meeting (the FOMC Minutes) is released.  FOMC Minutes documents average ~10,000 words each.  Given our evaluation horizon of 2008 -  June 2023, this results in 123 documents.
 
+## Data Access
+
+FOMC Minutes documents are freely available to download from the FedTools Python packag.  Historical stock price and technical indicator information is also freely avaialble to download from yFinance and Ta-lib.
+
 ## List of Files
 
 This repository contains the following files:
@@ -44,13 +48,13 @@ This repository contains the following files:
 
 mins_dataset_2008_2023.csv:  Contains 123 FOMC Minutes transcripts downloaded from the FedTools python package.  These are the inputs for the NLP models.
 
-NLP_Final.ipynb:  A Jupyter Notebook which performs multiple NLP analyses on the FOMC Minutes, then translates the outputs into numerical vectors that can be used as feature inputs in the Portfolio model.
+NLP_Analyis_Final.ipynb:  A Jupyter Notebook which performs multiple NLP analyses on the FOMC Minutes, then translates the outputs into numerical vectors that can be used as feature inputs in the Portfolio Optimization models.
 
-NLP_output_NEW_TEST_DATE.csv:  The output from the Jupyter Notebook of all NLP analyses except for Universal Sentence Encoder and Named Entity Recognition.  Consists of numerical vector representations for each of the FOMC Minutes documents.  Used in the Portfolio model.  
+NLP_output_NEW_TEST_DATE.csv:  The output from the Jupyter Notebook of all NLP analyses except for Universal Sentence Encoder and Named Entity Recognition.  Consists of numerical vector representations for each of the FOMC Minutes documents.  Used in the Portfolio Optimization models.  
 
-use_scores_NEW_TEST_DATE.csv:  Numerical similarity scores between subsequent FOMC Minutes documents using the Universal Sentence Encoder model.  Used in the Portfolio model.
+use_scores_NEW_TEST_DATE.csv:  Numerical similarity scores between subsequent FOMC Minutes documents using the Universal Sentence Encoder model.  Used in the Portfolio Optimization model.
 
-NLP_FOMC_people_newtext.csv:  Counts of how many times each FOMC Board Member is mentioned in each of the 123 FOMC Minutes documents. Used in the Portfolio model.
+NLP_FOMC_people_NEW_TEST_DATE.csv:  Counts of how many times each FOMC Board Member is mentioned in each of the 123 FOMC Minutes documents. Used in the Portfolio Optimization models.
 
 ## Portfolio Analysis:
 
@@ -75,7 +79,7 @@ In either case, this process will return a pandas df that looks like this:
 
  <img width="340" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/127001653/c26a16db-9f1e-43ae-ba23-88e5d9ecea69">
 
-Outputs:   The NLP model notebook creates 3 separate .csv files which can be used in the Portfolio Optimization model: (a) one containing vectors from the Universal Sentence Encoder (2) a second file containing results of the Named Entity Recognition modeling, and (3) a third file containing the results of all other NLP analyses.
+Outputs:   The NLP model notebook creates 3 separate .csv files which can be used in the Portfolio Optimization models: (a) one containing vectors from the Universal Sentence Encoder (2) a second file containing results of the Named Entity Recognition modeling, and (3) a third file containing the results of all other NLP analyses.
 
 ## Part 2 of 2:  Running the Portfolio Optimization Models
 
