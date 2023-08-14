@@ -102,7 +102,7 @@ The portfolio analysis section is reliant on the combined aggregate .csv file ge
 
 2. Run the Trading_window_Final.ipynb with the upstream generated test_60_40_advanced.csv file along with the Full_Fed_Minutes_test.csv file produced from the previous NLP vector aggregation the NLP_FOMC_People.csv named entity recognition .csv file ( Full samples of both NLP .csv files is provided in the sub folder to allow this section to run as a standalone from the upstream NLP data generation portion. Verify the Ticker_list, bond_list, and equities_list match the ETF tickers generated in the upstream ETF_Data_Fetch notebook. This notebook produces an output called Fed_Window_df.csv used in the Classifiers downstream notebook.
    
-<img width="500" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/9080eb21-e60f-4e49-90e3-f99730d38968">
+<img width="700" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/9080eb21-e60f-4e49-90e3-f99730d38968">
 
 3.  Run Classifiers.ipynb with the Fed_Window_df.csv as input ( A pre populated .csv is provided in a sub folder). Specify which NLP metrics to include to be evaluated in model performance. Run the notebook to conduct a Monte Carlo analysis for all 3 classifiers. After A/B testing, XGBoost is considered to be the superior classifier for this task across all NLP metrics, and is the default model for bull/bear prediction. Additionally, this notebook uses previous Monte Carlo data from nlp_mc_Final which was batch processed. These findings are plotted within this notebook. This notebook outputs the predictions of the provided classifier and chosen NLP metrics as Predictions_.csv ( A final version is provided as Predictions_best_tune.csv).
 
