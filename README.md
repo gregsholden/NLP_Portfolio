@@ -96,11 +96,13 @@ Outputs:   The NLP model notebook creates 3 separate .csv files which can be use
 
 ## Part 2 of 2:  Running the Portfolio Optimization Models
 
-Requirements: 
-The portfolio analysis section is reliant on the combined aggregate .csv file generated from the Transformer NLP folder titled Full_Fed_Minutes_test.csv. 
+## Requirements: 
+
+The portfolio analysis section is reliant on the combined aggregate.csv file generated from the Transformer NLP folder titled Full_Fed_Minutes_test.csv. A full sample is provided in the Portfolio_Analysis sub folder titled Excel Data
 
 The Yahoo Finance (yfinance) library is required to extract ticker data. 
 
+## Developing & Running a Trade Strategy
 1. Run ETF_Data_Fetch to retrieve desired ticker data and generate the test_60_40_advanced.csv file. Ticker inputs can be modified in the Equity_Tickers & Debt_Tickers inputs at the top of the file. 
 
 
@@ -128,6 +130,7 @@ Top-Combinations
 
 <img width="200" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/e6391f01-1c7a-4cc1-91fd-f4cdc6e0b991">
 
+
 Aggregate Return Results
 
 
@@ -142,7 +145,7 @@ Sharpe
 
 
 ### PIPREQS FILE
-PipReqs files for each section of this Project are located in their respective sub folders. 
+The PipReqs files for each section of this Project are located in their respective sub folders and are titled "requirements.txt"
 
 
 
