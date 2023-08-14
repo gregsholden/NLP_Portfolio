@@ -60,6 +60,15 @@ NLP_FOMC_people_NEW_TEST_DATE.csv:  Counts of how many times each FOMC Board Mem
 
 Portfolio_model.ipynb:
 
+Transformer_FED.ipynb: Due to the computational demands of transformer LLM and a reliance on CUDA, the transformer sentiment analysis is contained in its own sub folder with a batch pre populated vector array stored as an output. Transformer_FED.ipynb extracts FOMC meeting transcripts and batch scores them for sentiment. A pre populated output of FOMC sentiment is located in a sub folder titled sentiment_minutes. 
+
+FED_NLP_Combine.ipynb: Aggregates all NLP outputs into a singular dataframe. This notebooks inputs are sentiment_minutes.. (multiple batch files), use_scores_07_20,NLP_output_07_19,FOMC_people_07_19. This noteboot outputs the an aggregated csv file titled Full_Fed_Minutes.csv. All outputs and inputs are located in a sub folder titled Batch_Transformer_files.
+
+
+
+
+
+
 
 ## Getting Started
 
