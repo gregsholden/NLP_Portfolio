@@ -112,6 +112,17 @@ The portfolio analysis section is reliant on the combined aggregate .csv file ge
 5.  Run the Performance_Final.ipynb with the test_60_40_advanced stock ticker .csv file generated in Step 1 along with the Predictions_.csv generated in step 3. Verify the Ticker_data, equity_tickers and bond_tickers inputs match from Step 1 and choose preferred equity upweighting (bond weighting is calculated as the inverse) This notebook generates optimum pairings of ETF tickers in a tops variable. It also plots aggregate return and calculates Sharpe Ratio. It is currently set to plot the S&P 500 – TLT baseline combination for the NLP, non NLP and passive portfolios as an override. 
 
 
+Top-Combinations
+
+<img width="200" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/e6391f01-1c7a-4cc1-91fd-f4cdc6e0b991">
+
+Aggregate Return Results
+
+
+<img width="700" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/af11ae81-cdf9-4f25-9465-c198d9d7dd9c">
+
+
+Sharpe 
 
 ## Requirements
 
