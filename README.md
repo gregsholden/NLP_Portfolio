@@ -94,11 +94,25 @@ In either case, this process will return a pandas df that looks like this:
 
 Outputs:   The NLP model notebook creates 3 separate .csv files which can be used in the Portfolio Optimization models: (a) one containing vectors from the Universal Sentence Encoder (2) a second file containing results of the Named Entity Recognition modeling, and (3) a third file containing the results of all other NLP analyses.
 
-## Part 2 of 2:  Running the Portfolio Optimization Models
+
+
+## Part 2 of 2: Transformer Batch Processing & NLP Aggregation
+
+Inputs: Batch processed "sentiment_minutes" .csv files located in the excel_data subfolder, use_scores.csv, NLP_output.csv and FOMC_people.csv are also required and are contained in the same sub folder.
+
+1. Due to the computational demands of transformer LLM and a reliance on CUDA, the transformer sentiment analysis is contained in its own sub folder with a batch pre populated vector array stored as an output. Transformer_FED.ipynb extracts FOMC meeting transcripts and batch scores them for sentiment. A pre populated output of FOMC sentiment is located in a sub folder titled sentiment_minutes. However, the file can be run for small date ranges for exploration purposes. 
+
+2. Run FED_NLP_Combine.ipynb to aggregate all NLP outputs into a singular dataframe for downstream use
+
+<img width="800" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/9abb0e19-7754-4b5e-85e9-e9fc234bec29">
+
+
+
+## Part 3 of 3:  Running the Portfolio Optimization Models
 
 ## Requirements: 
 
-The portfolio analysis section is reliant on the combined aggregate.csv file generated from the Transformer NLP folder titled Full_Fed_Minutes_test.csv. A full sample is provided in the Portfolio_Analysis sub folder titled Excel Data
+The portfolio analysis section is reliant on the combined aggregate.csv file generated from the Transformer NLP folder titled Full_Fed_Minutes_test.csv. A full copy of this .csv file is provided in the Portfolio_Analysis Excel Data sub folder.
 
 The Yahoo Finance (yfinance) library is required to extract ticker data. 
 
@@ -138,7 +152,7 @@ Aggregate Return Results
 
 
 
-Sharpe 
+Risk Adjusted Returns -Sharpe Ratio 
 
 <img width="600" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/20c6d401-b9fe-4174-be4c-4eca9084165d">
 
