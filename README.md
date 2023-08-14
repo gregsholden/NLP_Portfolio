@@ -96,8 +96,9 @@ Outputs:   The NLP model notebook creates 3 separate .csv files which can be use
 
 ## Part 2 of 2:  Running the Portfolio Optimization Models
 
-## Requirements: 
+Requirements: 
 The portfolio analysis section is reliant on the combined aggregate .csv file generated from the Transformer NLP folder titled Full_Fed_Minutes_test.csv. 
+
 The Yahoo Finance (yfinance) library is required to extract ticker data. 
 
 1. Run ETF_Data_Fetch to retrieve desired ticker data and generate the test_60_40_advanced.csv file. Ticker inputs can be modified in the Equity_Tickers & Debt_Tickers inputs at the top of the file. 
