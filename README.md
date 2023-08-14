@@ -96,20 +96,31 @@ Outputs:   The NLP model notebook creates 3 separate .csv files which can be use
 
 ## Part 2 of 2:  Running the Portfolio Optimization Models
 
+## Requirements: 
 The portfolio analysis section is reliant on the combined aggregate .csv file generated from the Transformer NLP folder titled Full_Fed_Minutes_test.csv. 
+The Yahoo Finance (yfinance) library is required to extract ticker data. 
 
 1. Run ETF_Data_Fetch to retrieve desired ticker data and generate the test_60_40_advanced.csv file. Ticker inputs can be modified in the Equity_Tickers & Debt_Tickers inputs at the top of the file. 
 
+
+<img width="700" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/1784be78-0e4b-420f-84c7-7efed73e6c69">
+
+
 2. Run the Trading_window_Final.ipynb with the upstream generated test_60_40_advanced.csv file along with the Full_Fed_Minutes_test.csv file produced from the previous NLP vector aggregation the NLP_FOMC_People.csv named entity recognition .csv file ( Full samples of both NLP .csv files is provided in the sub folder to allow this section to run as a standalone from the upstream NLP data generation portion. Verify the Ticker_list, bond_list, and equities_list match the ETF tickers generated in the upstream ETF_Data_Fetch notebook. This notebook produces an output called Fed_Window_df.csv used in the Classifiers downstream notebook.
+
    
 <img width="700" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/9080eb21-e60f-4e49-90e3-f99730d38968">
 
-3.  Run Classifiers.ipynb with the Fed_Window_df.csv as input ( A pre populated .csv is provided in a sub folder). Specify which NLP metrics to include to be evaluated in model performance. Run the notebook to conduct a Monte Carlo analysis for all 3 classifiers. After A/B testing, XGBoost is considered to be the superior classifier for this task across all NLP metrics, and is the default model for bull/bear prediction. Additionally, this notebook uses previous Monte Carlo data from nlp_mc_Final which was batch processed. These findings are plotted within this notebook. This notebook outputs the predictions of the provided classifier and chosen NLP metrics as Predictions_.csv ( A final version is provided as Predictions_best_tune.csv).
-
-<img width="700" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/0be0a659-3abb-492f-9f18-43fbcddfbe59">
+<img width="750" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/74e7e371-910d-4667-a23b-e9a4560ecfa7)">
 
 
-5.  Run the Performance_Final.ipynb with the test_60_40_advanced stock ticker .csv file generated in Step 1 along with the Predictions_.csv generated in step 3. Verify the Ticker_data, equity_tickers and bond_tickers inputs match from Step 1 and choose preferred equity upweighting (bond weighting is calculated as the inverse) This notebook generates optimum pairings of ETF tickers in a tops variable. It also plots aggregate return and calculates Sharpe Ratio. It is currently set to plot the S&P 500 – TLT baseline combination for the NLP, non NLP and passive portfolios as an override. 
+3. Run Classifiers.ipynb with the Fed_Window_df.csv as input ( A pre populated .csv is provided in a sub folder). Specify which NLP metrics to include to be evaluated in model performance. Run the notebook to conduct a Monte Carlo analysis for all 3 classifiers. After A/B testing, XGBoost is considered to be the superior classifier for this task across all NLP metrics, and is the default model for bull/bear prediction. Additionally, this notebook uses previous Monte Carlo data from nlp_mc_Final which was batch processed. These findings are plotted within this notebook. This notebook outputs the predictions of the provided classifier and chosen NLP metrics as Predictions_.csv ( A final version is provided as Predictions_best_tune.csv).
+
+<img width="750" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/0be0a659-3abb-492f-9f18-43fbcddfbe59">
+
+
+
+4. Run the Performance_Final.ipynb with the test_60_40_advanced stock ticker .csv file generated in Step 1 along with the Predictions_.csv generated in step 3. Verify the Ticker_data, equity_tickers and bond_tickers inputs match from Step 1 and choose preferred equity upweighting (bond weighting is calculated as the inverse) This notebook generates optimum pairings of ETF tickers in a tops variable. It also plots aggregate return and calculates Sharpe Ratio. It is currently set to plot the S&P 500 – TLT baseline combination for the NLP, non NLP and passive portfolios as an override. 
 
 
 Top-Combinations
@@ -119,22 +130,18 @@ Top-Combinations
 Aggregate Return Results
 
 
-<img width="700" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/af11ae81-cdf9-4f25-9465-c198d9d7dd9c">
+<img width="900" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/af11ae81-cdf9-4f25-9465-c198d9d7dd9c">
+
 
 
 Sharpe 
 
-## Requirements
+<img width="600" alt="image" src="https://github.com/JPeloquin13/NLP_Portfolio/assets/103608779/20c6d401-b9fe-4174-be4c-4eca9084165d">
+
+
 
 ### PIPREQS FILE
+PipReqs files for each section of this Project are located in their respective sub folders. 
 
 
-## Project Structure
-
-DIAGRAM SHOWING HOW IT WORKS?  MAY NOT NEED THIS
-
-## Sample Outputs - Portfolio Model
-
-Code samples
-Output charts – stock price returns
 
