@@ -38,7 +38,7 @@ Our dataset consists of FOMC Minutes from 2008 through June of 2023.   Upon the 
 
 ## Data Access
 
-FOMC Minutes documents are freely available to download from the FedTools Python packag.  Historical stock price and technical indicator information is also freely avaialble to download from yFinance and Ta-lib.
+FOMC Minutes documents are freely available to download from the FedTools Python package.  Historical stock price and technical indicator information is also freely avaialble to download from yFinance and Ta-lib.
 
 ## List of Files
 
